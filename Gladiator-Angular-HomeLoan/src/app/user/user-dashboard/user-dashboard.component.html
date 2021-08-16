@@ -1,0 +1,55 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="hero-image">
+<img src="assets/logo.jpeg" width="200" height="170" style="display:inline"><br><br><br><br><br>
+
+<div style="text-align: center;">
+
+<h5 align="center">Welcome, User</h5>
+<h1 align="center" > LTI Home Loan Application </h1>
+<br>
+<button type='button' class="btn btn-primary btn-block/" (click)="viewUser()">View My Information</button>&nbsp;&nbsp;&nbsp;
+<button type='button' class="btn btn-primary btn-block/" (click)="gotoLoanTracker()">Loan Tracker</button>&nbsp;&nbsp;&nbsp;
+<button type='button' class="btn btn-primary btn-block/" (click)="gotoLogin()">Logout</button><br><br>
+<div [hidden]="view">
+    <table border="2" *ngIf="user && user.length" align="center">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Phone number</th>
+            <th>Gender</th>
+            <th>email-id</th>
+            <th>DOB</th>
+            <th>Nationality</th>
+            <th>Aadhar Number</th>
+            <th>Pan Number</th>
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor="let info of user">
+        <td>{{info.debtorFName}}</td>
+        <td>{{info.debtorMName}}</td>
+        <td>{{info.debtorLName}}</td>
+        <td>{{info.debtorGender}}</td>
+        <td>{{info.debtorPhone}}</td>
+        <td>{{info.debtorEmail}}</td>
+        <td>{{info.debtorDOB}}</td>
+        <td>{{info.debtorNationality}}</td>
+        <td>{{info.debtorAadhar}}</td>
+        <td>{{info.debtorPancard}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<router-outlet></router-outlet>
+

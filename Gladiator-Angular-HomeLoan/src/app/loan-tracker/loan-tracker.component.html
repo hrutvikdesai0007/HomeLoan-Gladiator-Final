@@ -1,0 +1,62 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<a href="/"><img src="assets/logo.jpeg" width="200" height="170" style="display:inline"></a>
+<h1 align="center" > LTI Home Loan Application </h1><br>
+    
+<button type='button'><a href="/">Home</a></button>  
+<html>
+    <h1>Loan Tracker</h1>
+    <body>
+        <div>
+        <input type=text placeholder="trackerId" name=t1 [(ngModel)]="trackerId" required #id="ngModel"  minlength="1" maxlength="4">
+        <div *ngIf="id.invalid"> 
+            trackerId id required. 
+      </div>
+
+        <br>
+        <input type=text placeholder="phone number" name=t2 [(ngModel)]="phone" required #phn="ngModel" minlength="13" maxlength="13">
+        <div *ngIf="phn.invalid"> 
+            phone number required. 
+      </div>
+      <br>
+
+        <button type='button' (click)="trackLoan(trackerId, phone)">search</button>
+       
+        </div>
+
+
+<table border="2" *ngIf="tempLoans && tempLoans.length">
+    <thead>
+        <tr>
+            <th>TrackerId</th>
+            <th>DEBTOR_PHONE</th>
+            <th>VERIFICATIONSTATUS</th>
+            <th>FINALAPPROVAL</th>
+            <th>ACCOUNTNUM</th>
+            <th>BALANCE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let track of tempLoans">
+            <td>{{track.trackerId}}</td>
+            <td>{{track.debtorPhone}}</td>
+            <td>{{track.verificationStatus}}</td>
+            <td>{{track.finalApproval}}</td>
+            <td>{{track.accountNum}}</td>
+            <td>{{track.balance}}</td>
+            <!--<td>
+                <button type='button' (click)="deleteEmployee(emp.employeeNumber)">Delete</button>
+            </td>-->
+        </tr>
+    </tbody>
+
+
+</table>
+</body>
+</html>

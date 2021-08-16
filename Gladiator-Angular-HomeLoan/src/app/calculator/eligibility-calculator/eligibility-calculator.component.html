@@ -1,0 +1,26 @@
+<br><br>
+<div class="container">
+  <div class="form-group row">
+    <div class="card-header mx-auto">
+      <br><br><br>
+      <p class="title">Loan Eligibility Calculator</p>
+      <br>
+      <p class="title">Enter your monthly income</p>
+      <input type="text" placeholder="Monthly Income" [(ngModel)]="monthlyincome" class="form-control">
+      <br>
+      <button class="btn btn-primary" (click)="update()"> Calculate</button>
+      <br>
+      <div class="jusify-center">
+        <br>
+        <h3>
+          Loan Amount you are eligible for
+        </h3>
+        <h3>
+          <b><span class="result">
+              Rs {{test}}
+            </span></b>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

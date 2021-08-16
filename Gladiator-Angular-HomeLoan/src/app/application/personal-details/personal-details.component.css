@@ -1,0 +1,33 @@
+.required {
+    content: "*";
+    color: red;
+    font-size: 17px;
+}
+
+.form-control.form-control-sm.ng-valid:not(form)  {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.form-control.form-control-sm.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+.form-control1.ng-valid:not(form)  {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.form-control1.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+.input-error {
+    border: rgb(106, 182, 140) 1px solid;
+}
+
+.checkmarkdiv {
+    text-align:left;
+    margin-right: 0.6rem;
+
+}
+
+.checkmarkdiv {
+    width:100%;
+}

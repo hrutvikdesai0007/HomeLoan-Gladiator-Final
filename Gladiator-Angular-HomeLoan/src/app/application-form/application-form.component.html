@@ -1,0 +1,82 @@
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" [destroyOnHide]="false" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<a ngbNavLink>Property Information</a>
+		<ng-template ngbNavContent>
+			<form #userForm="ngForm"> 
+                <div class="form-group">
+                    <div class="col">
+                    <label>Property Location</label>
+                    <input type="text"><br>
+                    </div>
+                <div class="form-group">
+                    <div class="col">
+                        <label>Property Name</label>
+                        <input type="text" ><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col">
+                        <label>Estimated Amount</label>
+                        <input type="number"><br>
+                    </div>
+                </div>
+
+                </div>
+			</form>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="2">
+		<a ngbNavLink>Income Details Information</a>
+		<ng-template ngbNavContent>
+			<form>
+				<div class="row">
+					<div class="col">
+            <label for="exampleFormControlInput1">Currently Employed</label>
+						<select class="form-control" id="exampleFormControlSelect1">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+				  <div class="col">
+            <label for="exampleFormControlInput1">Company Name</label>
+						<input type="text" class="form-control" placeholder="Company name">
+          </div>
+				</div>
+			</form>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="3">
+		<a ngbNavLink>Loan Details Information</a>
+		<ng-template ngbNavContent let-active>
+			<form>
+				<div class="form-group">
+					<div class="col">
+            <label for="exampleFormControlInput1">Flat No.</label>
+						<input type="text" class="form-control">
+          </div>
+				  <div class="col">
+            <label for="exampleFormControlInput1">Address 1</label>
+						<input type="text" class="form-control">
+          </div>
+          <div class="col">
+            <label for="exampleFormControlInput1">Address 2</label>
+						<input type="text" class="form-control">
+          </div>
+				</div>
+			</form>
+		</ng-template>
+	</li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2 mb-2">
+</div>
+<div class="row">
+  <button type="button" class="ml-1 btn btn-secondary" (click)="previous()">Previous</button>
+  <button *ngIf="active !== 3" type="button" class="ml-auto mr-1 btn btn-secondary" (click)="next()">Next</button>
+  <button *ngIf="active === 3" type="button" class="ml-auto mr-1 btn btn-secondary" (click)="submit()">Submit</button>
+</div>

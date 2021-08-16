@@ -1,0 +1,65 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<img src="assets/logo.jpeg" width="200" height="170" style="display:inline">
+
+<div style="text-align: center;"></div>
+<p align="right">
+    <button class="btn btn-primary btn-block/" (click)=loggedout()>Logout</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<h5 align="center">Welcome, Admin</h5>
+<h1 align="center" > LTI Home Loan Application </h1>
+<br>
+<h4 align="center">Pending Applications</h4>
+
+<table align="center"> 
+    <tbody>
+        <div *ngFor="let deb of allDebtors">  
+                <div *ngFor="let lp of deb.loanee">
+                            <div *ngIf="lp.loanTrackers.verificationStatus=='Pending'">
+                                <thead>
+                                    <th>Approve</th>
+                                    <th>Reject</th>
+                                    <th>First Name</th>
+                                    <th>Middle Name</th>
+                                    <th>Last Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Gender</th>
+                                    <th>Nationality</th>
+                                    <th>Aadhar</th>
+                                    <th>PAN</th>
+                                    <th>Salary</th>
+                                    <th>Loan Amount</th>
+                                    <th>Interest Rate</th>
+                                    <th>Loan Tenure</th>
+                                </thead>
+                                <tr>
+                                <td align="center"><button type="button" class="btn btn-primary btn-block/" (click)="approve(lp.loanTrackers,lp)">Approve</button></td> 
+                                <td align="center"><button type="button" class="btn btn-primary btn-block/" (click)="reject(lp.loanTrackers)">Reject</button></td>
+                                <td>{{deb.debtorFName}}</td>
+                                <td>{{deb.debtorMName}}</td>
+                                <td>{{deb.debtorLName}}</td>
+                                <td>{{deb.debtorAddress}}</td>
+                                <td>{{deb.debtorEmail}}</td>
+                                <td>{{deb.debtorPhone}}</td>
+                                <td>{{deb.debtorGender}}</td>
+                                <td>{{deb.debtorNationality}}</td>
+                                <td>{{deb.debtorAadhar}}</td>
+                                <td>{{deb.debtorPancard}}</td>
+                                <td>{{lp.debtorSalary}}</td>
+                                <td>{{lp.loanAmount}}</td>
+                                <td>{{lp.interestRate}}</td>
+                                <td>{{lp.tenure}}</td>
+                                </tr><br>
+                            </div>
+                    </div>      
+            </div>
+    </tbody>
+</table>

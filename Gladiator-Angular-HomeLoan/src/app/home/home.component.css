@@ -1,0 +1,37 @@
+.image{
+    height:20em; background-size:cover; width: 1000px;;
+    background-image:url('/assets/home.jpeg');
+    background-position:50% 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .button1 {
+    background-color: powderblue; 
+    color: black; 
+    border: 2px solid #008CBA;
+    width: 90px;
+    height: 34px;
+  }
+  
+  .button1:hover {
+    background-color: #008CBA;
+    color: powderblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+  }
+  
+  .hero-image {
+    background-image: url('../../assets/background2.jpeg'); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 830px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+  h1{
+    color: rgb(37, 37, 37);
+  }

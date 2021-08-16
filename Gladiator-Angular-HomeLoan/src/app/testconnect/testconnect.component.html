@@ -1,0 +1,39 @@
+<p>testconnect works!</p>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<img src="assets/logo.jpeg" width="200" height="170" style="display:inline">
+
+<h1 align="center" > LTI Home Loan Application </h1>
+<div class="container-fluid">
+    <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit(userForm)" novalidate>
+      <h2>Income Details Form(Properties)</h2>
+      
+      <div class="form-group">
+        <label>Property Location</label>
+        <input type="text" #propertyLocation="ngModel" required class="form-control" [class.is-invalid]="propertyLocation.invalid && propertyLocation.touched" name="propertyLocation" [(ngModel)]="userModel.propertyLocation"><br>
+      </div>
+      <div class="form-group">
+        <label>Property Name</label>
+        <input type="text" #propertyName="ngModel" (blur)="validateTopic(propertyName.value)" (change)="validateTopic(propertyName.value)" required class="form-control" [class.is-invalid]="propertyName.invalid && propertyName.touched" name="propertyName" [(ngModel)]="userModel.propertyName"><br>
+      </div>
+      <div class="form-group">
+        <label>Estimated Amount</label>
+        <input type="number" #propertyCost="ngModel" required class="form-control" [class.is-invalid]="propertyCost.invalid && propertyCost.touched" name="propertyCost" [(ngModel)]="userModel.propertyCost"><br>
+      </div>
+      <button class="btn btn-primary" [disabled]="userForm.form.invalid || topicHasError" type="submit">Submit</button>
+  
+    </form>
+    <div class="alert alert-danger" *ngIf="errorMsg">
+      {{errorMsg}}
+    </div>
+  </div>
+  
+<router-outlet></router-outlet>
+
