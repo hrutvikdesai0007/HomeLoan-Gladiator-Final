@@ -25,6 +25,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { FeaturesComponent } from './features/features.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { PropertyComponent } from './application/property/property.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,7 @@ const routes: Routes = [
   { path: 'LoanTrack', component: LoanTrackerComponent  },
   {path: 'application', component: ApplicationComponent,
 children: [
+  { path: 'propertyDetails', component: PropertyComponent},
   { path: 'incomeDetails', component: IncomeDetailsComponent},
   { path: 'loanDetails', component: LoanDetailsComponent },
   { path: 'personalDetails', component: PersonalDetailsComponent},

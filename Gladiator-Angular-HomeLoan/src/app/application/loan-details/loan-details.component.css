@@ -10,3 +10,7 @@
 .form-control:invalid {
     border-left: 5px solid #a94442; /* red */
 }
+
+.card-header{
+    background-color: #fff;
+   }

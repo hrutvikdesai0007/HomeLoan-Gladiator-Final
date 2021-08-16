@@ -182,7 +182,7 @@ export class DocumentsUploadComponent implements OnInit {
   propty=new UserIncomeDetails3();
   
   onSubmit() {
-
+    alert("Application done successfully!!!")
     this.userModeler.docs=this.obj1;
     // this.userModeler.propertiess=this.userModel;
     var x = JSON.stringify(this.obj1);

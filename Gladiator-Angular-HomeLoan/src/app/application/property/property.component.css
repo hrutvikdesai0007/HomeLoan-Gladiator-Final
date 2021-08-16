@@ -40,15 +40,8 @@ width:15%;
   margin: 0 auto;
   }
 
-  .hero-image {
-    background-image: url('../../assets/background2.jpeg'); /* The image used */
-    background-position: center center;
-    height: 1900px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  
-  }
+
+
   .card-header{
     background-color: #fff;
    }

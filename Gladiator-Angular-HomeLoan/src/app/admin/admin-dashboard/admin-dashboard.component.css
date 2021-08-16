@@ -2,12 +2,13 @@ table {
     width:100%;
   }
   table, th, td {
-    border: 1px solid black;
     border-collapse: collapse;
   }
   th, td {
-    padding: 15px;
+    border: 1px solid black;
+    padding: 13px;
     text-align: left;
+    background-color: white;
   }
   #t01 tr:nth-child(even) {
     background-color: #eee;
@@ -18,4 +19,16 @@ table {
   #t01 th {
     background-color: black;
     color: white;
+  }
+  .hero-image {
+    background-image: url('../../../assets/background2.jpeg'); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 1100px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+  h1, h5,h3{
+    color: black;
   }

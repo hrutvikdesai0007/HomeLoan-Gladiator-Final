@@ -1,0 +1,46 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="text-align: center;">
+<div class="container">
+    <div class="form-group row">
+      <div class="card-header mx-auto">
+        <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
+          <h2>Property Details Form</h2>
+
+          <div class="form-group">
+            <label>Property Location<span class="required">*</span></label>
+            <input type="text" #propertyLocation="ngModel" required class="form-control"
+              [class.is-invalid]="propertyLocation.invalid && propertyLocation.touched" name="propertyLocation"
+              [(ngModel)]="userModel.propertyLocation"><br>
+          </div>
+          <div class="form-group">
+            <label>Property Name<span class="required">*</span></label>
+            <input type="text" #propertyName="ngModel" (blur)="validateTopic(propertyName.value)"
+              (change)="validateTopic(propertyName.value)" required class="form-control"
+              [class.is-invalid]="propertyName.invalid && propertyName.touched" name="propertyName"
+              [(ngModel)]="userModel.propertyName"><br>
+          </div>
+          <div class="form-group">
+            <label>Estimated Amount (Rupees)<span class="required">*</span></label>
+            <input type="number" #propertyCost="ngModel" required class="form-control"
+              [class.is-invalid]="propertyCost.invalid && propertyCost.touched" name="propertyCost"
+              [(ngModel)]="userModel.propertyCost"><br>
+            <div *ngIf="propertyCost.errors?.required" class="text-danger">Estimated Amount is Required</div>
+          </div>
+
+          <button class="btn btn-primary" [disabled]="userForm.form.invalid || topicHasError"
+            type="submit">Submit</button>
+
+        </form>
+        <div class="alert alert-danger" *ngIf="errorMsg">
+          {{errorMsg}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

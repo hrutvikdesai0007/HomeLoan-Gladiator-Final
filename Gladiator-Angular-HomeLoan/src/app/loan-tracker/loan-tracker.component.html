@@ -6,13 +6,18 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<a href="/"><img src="assets/logo.jpeg" width="200" height="170" style="display:inline"></a>
+<div class="hero-image">
+<a href="/"><img src="assets/logo.jpeg" width="200" height="170" style="display:inline"></a><br><br><br><br>
+<div style="text-align: center;">
 <h1 align="center" > LTI Home Loan Application </h1><br>
     
-<button type='button'><a href="/">Home</a></button>  
-<html>
-    <h1>Loan Tracker</h1>
-    <body>
+<button class="btn btn-primary btn-block/" type='button' routerLink="/">Home</button>  <br><br>
+
+        <div class="card" style="width:35rem;" id="wrap">
+            <h3 class="card-title align-items-center d-flex justify-content-center">User Login</h3>
+            <div class="card-body align-items-center d-flex justify-content-center">
+                
+        <div class="card-body">
         <div>
         <input type=text placeholder="trackerId" name=t1 [(ngModel)]="trackerId" required #id="ngModel"  minlength="1" maxlength="4">
         <div *ngIf="id.invalid"> 
@@ -26,12 +31,17 @@
       </div>
       <br>
 
-        <button type='button' (click)="trackLoan(trackerId, phone)">search</button>
+        <button type='button' class="btn btn-primary btn-block/" (click)="trackLoan(trackerId, phone)">search</button>
        
         </div>
 
 
-<table border="2" *ngIf="tempLoans && tempLoans.length">
+
+</div>
+</div>
+</div>
+<br><br>
+<table border="2" *ngIf="tempLoans && tempLoans.length" align="center">
     <thead>
         <tr>
             <th>TrackerId</th>
@@ -58,5 +68,6 @@
 
 
 </table>
-</body>
-</html>
+
+</div>
+</div>

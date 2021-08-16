@@ -32,6 +32,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { PropertyComponent } from './application/property/property.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { DocumentsComponent } from './documents/documents.component';
     UserLoginComponent,
     UserDashboardComponent,
     DocumentsComponent,
+    PropertyComponent
   ],
   imports: [
     BrowserModule,

@@ -13,22 +13,22 @@
         <h2>Employment Details Form&#9989;</h2>
         <h2>Loan Details Form</h2>
         <div class="form-group">
-          <label>Debtor Salary<span class="required">*</span></label>
+          <label>Debtor Salary (Monthly)<span class="required">*</span></label>
           <div *ngIf="debtorSalary.errors?.required" class="text-danger">Salary is Required</div>
           <input type="number" #debtorSalary="ngModel" required class="form-control" [class.is-invalid]="debtorSalary.invalid && debtorSalary.touched" name="debtorSalary" [(ngModel)]="loanModel.debtorSalary" required><br>
         </div>
           <div class="form-group">
-            <label>Interest Rate<span class="required">*</span></label>
+            <label>Interest Rate (per annum)<span class="required">*</span></label>
             <div *ngIf="interestRate.errors?.required" class="text-danger">Interest Rate is Required</div>
             <input type="number" #interestRate="ngModel" required class="form-control" [class.is-invalid]="interestRate.invalid && interestRate.touched" name="interestRate" [(ngModel)]="loanModel.interestRate" required><br>
           </div>
           <div class="form-group">
-            <label>Tenure<span class="required">*</span></label>
+            <label>Tenure (Years)<span class="required">*</span></label>
             <div *ngIf="tenure.errors?.required" class="text-danger">tenure is Required</div>
             <input type="number" #tenure="ngModel" required class="form-control" [class.is-invalid]="tenure.invalid && tenure.touched" name="tenure" [(ngModel)]="loanModel.tenure" required><br>
           </div>
           <div class="form-group">
-            <label>Loan Amount<span class="required">*</span></label>
+            <label>Loan Amount (Rupees)<span class="required">*</span></label>
             <div *ngIf="loanAmount.errors?.required" class="text-danger">Loan Amount is Required</div>
             <input type="number" #loanAmount="ngModel" required class="form-control" [class.is-invalid]="loanAmount.invalid && loanAmount.touched" name="loanAmount" [(ngModel)]="loanModel.loanAmount" required><br>
           </div>

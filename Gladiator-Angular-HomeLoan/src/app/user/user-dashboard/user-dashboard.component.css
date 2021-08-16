@@ -6,4 +6,25 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
   }
-
+  table {
+    width:100%;
+  }
+  table, th, td {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 13px;
+    text-align: left;
+    background-color: white;
+  }
+  #t01 tr:nth-child(even) {
+    background-color: #eee;
+  }
+  #t01 tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  #t01 th {
+    background-color: black;
+    color: white;
+  }

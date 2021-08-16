@@ -153,10 +153,10 @@
           <label>Gender<span class="required">*</span></label>
           <div class="checkmarkdiv">
             <input class="checkmark" type="radio" value="M" [formControl]="genderControl"
-              [(ngModel)]="userdetails.debtorGender" required> M
+              [(ngModel)]="userdetails.debtorGender" required> Male
             <br>
             <input class="checkmark" type="radio" value="F" [formControl]="genderControl"
-              [(ngModel)]="userdetails.debtorGender" required>F
+              [(ngModel)]="userdetails.debtorGender" required>Female
             <span *ngIf="genderControl.hasError('required') && genderControl.dirty" class="text-danger">
               required!!</span>
           </div>
